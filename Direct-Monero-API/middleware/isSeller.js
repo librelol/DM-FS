@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/user'); // Adjust the path as necessary
 const SECRET_KEY = process.env.SECRET_KEY || require('crypto').randomBytes(64).toString('hex');
+const openSeller = true;
 
 const isSeller = (req, res, next) => {
   const authHeader = req.headers['authorization'];
@@ -22,6 +23,11 @@ const isSeller = (req, res, next) => {
       const user = await User.findById(decoded.id);
       if (!user) {
         return res.status(404).json({ message: 'User not found' });
+      }
+
+      if (openSeller) {
+        req.user = user;
+        return next();
       }
 
       if (!user.isSeller) {
