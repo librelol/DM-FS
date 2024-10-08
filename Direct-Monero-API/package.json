@@ -1,0 +1,45 @@
+{
+  "name": "crypto-shop-api",
+  "version": "1.0.0",
+  "description": "Crypto powered shop",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node dist/server.js",
+    "build": "babel . --out-dir dist --ignore node_modules,dist",
+    "vercel-build": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-rate-limit": "^7.4.0",
+    "gridfs": "^1.0.0",
+    "gridfs-stream": "^1.1.1",
+    "helmet": "^7.1.0",
+    "jsdoc": "^4.0.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.6.3",
+    "multer": "^1.4.5-lts.1",
+    "react": "^18.3.1",
+    "validator": "^13.12.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.25.7",
+    "@babel/core": "^7.25.7",
+    "@babel/preset-env": "^7.25.7",
+    "@types/bcrypt": "^5.0.2",
+    "@types/body-parser": "^1.19.5",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/gridfs-stream": "^0.5.39",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/multer": "^1.4.12",
+    "@types/validator": "^13.12.2"
+  }
+}
